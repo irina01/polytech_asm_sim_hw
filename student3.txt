@@ -1,0 +1,8 @@
+3.JMP student 
+DB 26 
+DB 05 
+student: 
+MOV A, 26 
+MOV B, 05 
+ADD A, B 
+MOV B, 0
