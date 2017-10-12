@@ -1,0 +1,7 @@
+5. mov a, 8
+mov b, a
+student:
+DEC B
+MUL B
+CMP B,1
+JNE student
