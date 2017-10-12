@@ -1,0 +1,10 @@
+5. JMP student 
+DB 8 
+student: 
+mov a, 8 
+mov b, a 
+qwerty: 
+DEC B 
+MUL B 
+CMP B,1 
+JNE qwerty
