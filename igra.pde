@@ -5,18 +5,18 @@ float timeinterval;
 
 void setup () 
 { 
-size(800,600); 
-file = new SoundFile(this, "Schnappi.mp3"); 
-file.play(); 
-lasttimecheck = second (); 
-timeinterval = 10; 
+ size(800,600); 
+ file = new SoundFile(this, "Schnappi.mp3"); 
+ file.play(); 
+ lasttimecheck = second (); 
+ timeinterval = 10; 
 
 } 
 void strokechange() 
 { 
-if(second() > lasttimecheck + timeinterval) 
+ if(second() > lasttimecheck + timeinterval) 
 { 
-lasttimecheck = second (); ballX = 150; ballY = 100; 
+ lasttimecheck = second (); ballX = 150; ballY = 100; 
 } 
 } 
 
@@ -29,22 +29,23 @@ int miss = 0;
 
 void draw () 
 { 
-strokechange(); 
-if(mousePressed) 
+ strokechange(); 
+  if(mousePressed) 
 { 
-success = 0; 
-miss = 0; 
+ success = 0; 
+ miss = 0; 
 } 
 
 float paddle = 1000/(success+10); 
-if(ballX < 0 || ballX > width) speedX = -speedX; 
-if(ballY > height) 
+ if(ballX < 0 || ballX > width) speedX = -speedX; 
+ if(ballY > height) 
 { 
 speedY = -speedY; 
 float distance = abs(mouseX - ballX); 
-if (distance < paddle) success += 1; 
-else miss += 1; 
-} else speedY +=1; 
+ if (distance < paddle) success += 1; 
+ else miss += 1; 
+} 
+ else speedY +=1; 
 
 ballX += speedX; 
 ballY += speedY; 
@@ -63,20 +64,20 @@ text("miss: "+ miss, 10, 30);
 
 
 
-if (keyCode == ALT) 
+ if (keyCode == ALT) 
 { 
-PImage imd = loadImage ("myach.jpg"); 
-image (imd, 0,0,1000,700); 
+  PImage imd = loadImage ("myach.jpg"); 
+  image (imd, 0,0,1000,700); 
 } 
 } 
 void keyPressed () 
 { 
-if (key == CODED) 
+ if (key == CODED) 
 { 
-if (keyCode == ALT) 
+ if (keyCode == ALT) 
 { 
-PImage imd = loadImage ("myach.jpg"); 
-image (imd, 0,0,800,600); 
+ PImage imd = loadImage ("myach.jpg"); 
+ image (imd, 0,0,800,600); 
 } 
 } 
 }
