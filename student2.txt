@@ -1,5 +1,0 @@
-2. mov a, 26
-mov b, 5
-mov c, a
-mov a, b
-mov b, c
