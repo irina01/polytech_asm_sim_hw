@@ -2,11 +2,13 @@ import processing.sound.*;
 SoundFile file; 
 float lasttimecheck; 
 float timeinterval; 
+PImage imd;
 
 void setup () 
 { 
- size(800,600); 
+ size(1000,800); 
  file = new SoundFile(this, "Schnappi.mp3"); 
+ imd = loadImage ("myach.jpg"); 
  file.play(); 
  lasttimecheck = second (); 
  timeinterval = 10; 
@@ -29,22 +31,18 @@ int miss = 0;
 
 void draw () 
 { 
-  if(success >= 19 && success <= 21);
-  {
-    PImage imd = loadImage ("myach.jpg"); 
-    image (imd, 0,0,800,600); 
+  background (26, 94, 255); 
+  if(success == 20)
+  { 
+    image (imd, 0,0,1000,800); 
   }
-  for (success = 20; miss != 10; success = 21)
-{ 
-  success = 0; miss = 0;
-}
     
-strokechange(); 
-if(mousePressed) 
-{ 
- success = 0; 
- miss = 0; 
-} 
+  strokechange(); 
+  if(mousePressed) 
+  { 
+   success = 0; 
+   miss = 0; 
+  } 
 
 float paddle = 1000/(success+10); 
 if(ballX < 0 || ballX > width) speedX = -speedX; 
@@ -56,12 +54,12 @@ if(ballY > height)
  if (distance < paddle) success += 1; 
  else miss += 1; 
 } 
-else speedY +=1; 
-
+else {
+  speedY +=1; 
+} 
 ballX += speedX; 
 ballY += speedY; 
 
-background (26, 94, 255); 
 fill (255, 83, 26); 
 rect (mouseX-paddle, height-10, 200, 10); 
 fill (251, 255, 26); 
@@ -70,25 +68,13 @@ ellipse(ballX, ballY, 50, 50);
 fill (0); 
 text("success: " + success, 10, 10); 
 text("miss: "+ miss, 10, 30); 
+ 
+}
 
-
-
-
-
-if (keyCode == ALT) 
-{ 
- PImage imd = loadImage ("myach.jpg"); 
- image (imd, 0,0,800,600); 
-} 
-} 
 void keyPressed () 
 { 
- if(key==CODED)
-{
  if (keyCode == ALT)
 { 
- PImage imd = loadImage ("myach.jpg"); 
- image (imd, 0,0,800,600); 
-} 
+ image (imd, 0,0,1000,800); 
 } 
 }
