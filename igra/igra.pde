@@ -83,13 +83,9 @@ if (keyCode == ALT)
 } 
 void keyPressed () 
 { 
- if (key == CODED) 
-{ 
-<<<<<<< HEAD
-  if (keyCode == ALT) 
-=======
- if (keyCode == ALT) 
->>>>>>> d98eb7a299a9f717ae86632f8dddb9be0422d8f9
+ if(key==CODED)
+{
+ if (keyCode == ALT)
 { 
  PImage imd = loadImage ("myach.jpg"); 
  image (imd, 0,0,800,600); 
