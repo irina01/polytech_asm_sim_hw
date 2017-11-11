@@ -9,7 +9,7 @@ void setup ()
  size(1000,800); 
  file = new SoundFile(this, "Schnappi.mp3"); 
  imd = loadImage ("myach.jpg"); 
- file.play(); 
+ file.play();  
  lasttimecheck = second (); 
  timeinterval = 10; 
 
